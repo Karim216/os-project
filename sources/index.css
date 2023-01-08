@@ -5,7 +5,13 @@ html, body {
 }
 
 body{
-    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body{
+    background-color: rgb(189, 132, 243);
     height: 100vh;
 }
 
@@ -19,16 +25,33 @@ ul{
 header{
     position: fixed;
     top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
-header .main-menu{
-    width: 40%;
+header .main-menu, footer .pinned-menu{
+    max-width: 80%;
     margin: auto;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0 5px;
 }
 
-header .global-date-time{
-    position: absolute;
-    top: 0;
-    right: 0;
+header .main-menu nav li,
+footer .pinned-menu nav li{
+    margin: 0 10px;
+}
+
+header .global-date-time,
+footer .pc-status{
+    padding: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 header nav ul{
@@ -36,11 +59,66 @@ header nav ul{
     justify-content: space-around;
 }
 
+
+#global-search{
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+}
+
+#global-search:focus{
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+
+}
 /*MAIN*/
+main{
+    height: 80%;
+    overflow-y: hidden;
+    /* padding: 5% 0; */
+    box-sizing: border-box;
+    margin: 0 10px;
+}
+
+.grid-app-parent{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100%;
+}
+
+.grid-app-parent div{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.grid-app-parent div:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.grid-app-parent div span{
+    width: 100%;
+    text-align: center;
+}
+
 
 
 /*FOOTER*/
 footer{
     position: fixed;
     bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+footer nav ul{
+    display: flex;
 }
