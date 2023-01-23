@@ -1,3 +1,5 @@
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');
+
 html, body {
     max-height: 100vh;
     margin: 0;
@@ -57,21 +59,33 @@ footer .pc-status{
 header nav ul{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    margin: 10px;
 }
 
+.container-search-input{
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 7px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.container-search-input i{
+    color: rgba(255, 255, 255, 0.5);
+}
 
 #global-search{
     border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5px;
+    background: transparent;
+    margin-left: 5px;
+    caret-color: rgba(0, 0, 0, 0.3);
 }
 
 #global-search:focus{
     outline: none;
-    background: rgba(255, 255, 255, 0.3);
-
 }
+
 /*MAIN*/
 main{
     height: 80%;
@@ -83,6 +97,7 @@ main{
 
 .grid-app-parent{
     display: grid;
+    grid-auto-flow: column;
     grid-template-columns: repeat(13, 1fr);
     grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 0px;
@@ -90,23 +105,25 @@ main{
     height: 100%;
 }
 
-.grid-app-parent div{
+.grid-app-parent .menu-item{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     border-radius: 5px;
+    padding: 0 10px;
 }
 
-.grid-app-parent div:hover{
+.grid-app-parent .menu-item:hover{
     background-color: rgba(0, 0, 0, 0.1);
     transition: .2s ease-in-out;
     cursor: pointer;
 }
 
-.grid-app-parent div span{
-    width: 100%;
-    text-align: center;
+.grid-app-parent .menu-item i{
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
-
 
 
 /*FOOTER*/
